@@ -25,9 +25,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/google/battery-historian/bugreportutils"
-	"github.com/google/battery-historian/csv"
-	"github.com/google/battery-historian/historianutils"
+	"github.com/vggajam/battery-historian/bugreportutils"
+	"github.com/vggajam/battery-historian/csv"
+	"github.com/vggajam/battery-historian/historianutils"
 )
 
 var rpcRE = regexp.MustCompile(

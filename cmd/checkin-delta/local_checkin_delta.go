@@ -30,12 +30,12 @@ import (
 	"time"
 
 	"github.com/golang/protobuf/proto"
-	"github.com/google/battery-historian/bugreportutils"
-	"github.com/google/battery-historian/checkindelta"
-	"github.com/google/battery-historian/checkinparse"
-	"github.com/google/battery-historian/checkinutil"
-	bspb "github.com/google/battery-historian/pb/batterystats_proto"
-	sessionpb "github.com/google/battery-historian/pb/session_proto"
+	"github.com/vggajam/battery-historian/bugreportutils"
+	"github.com/vggajam/battery-historian/checkindelta"
+	"github.com/vggajam/battery-historian/checkinparse"
+	"github.com/vggajam/battery-historian/checkinutil"
+	bspb "github.com/vggajam/battery-historian/pb/batterystats_proto"
+	sessionpb "github.com/vggajam/battery-historian/pb/session_proto"
 )
 
 var (

@@ -24,9 +24,9 @@ import (
 
 	"github.com/golang/protobuf/proto"
 
-	"github.com/google/battery-historian/historianutils"
+	"github.com/vggajam/battery-historian/historianutils"
 
-	usagepb "github.com/google/battery-historian/pb/usagestats_proto"
+	usagepb "github.com/vggajam/battery-historian/pb/usagestats_proto"
 )
 
 // Time format that firstInstallTime and lastUpdateTime are in, using the constants defined in the Golang time package
