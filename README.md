@@ -32,26 +32,23 @@ available at `http://123.456.78.90:<port>`.
 For more information about the port forwarding, see the [Docker
 documentation](<https://docs.docker.com/engine/reference/run/#/expose-incoming-ports>).
 
-#### Building from source code
+#### Building from source code - on Windows only
 
 Make sure you have at least Golang version 1.8.1:
 
 * Follow the instructions available at <http://golang.org/doc/install> for downloading and installing the Go compilers, tools, and libraries.
 * Create a workspace directory according to the instructions at
   <http://golang.org/doc/code.html#Organization>.
-* Ensure that `GOPATH` and `GOBIN` environment variables are appropriately set and added to your `$PATH`
-  environment variable. `$GOBIN should be set to $GOPATH/bin`.
+* Ensure that `GOPATH` and `GOBIN` environment variables are appropriately set and added to your `PATH`
+  environment variable. 
   * For Windows, you may set environment variables through the "Environment Variables" button on the
   "Advanced" tab of the "System" control panel. Some versions of Windows provide this control panel
   through the "Advanced System Settings" option inside the "System" control panel.
-  * For Linux and Mac OS X, you can add the following lines to your ~/.bashrc or
-    ~/.profile files (assuming your workspace is $HOME/work):
-
-      ```
-      export GOPATH=$HOME/work
-      export GOBIN=$GOPATH/bin
-      export PATH=$PATH:$GOBIN
-      ```
+  ```
+  GOPATH=%USERPROFILE%\go
+  GOBIN=C:\Program Files\Go\bin
+  PATH=%PATH%;%GOBIN%
+  ```
 
 Next, install Git from <https://git-scm.com/downloads> if it's not already installed.
 
@@ -63,25 +60,25 @@ Next, install Java from <http://www.oracle.com/technetwork/java/javase/downloads
 Next, download the Battery Historian code and its dependencies:
 
 ```
-$ go get -d -u github.com/google/battery-historian/...
+go get -d -u github.com/vggajam/battery-historian/...
 ```
 
 Finally, run Battery Historian!
 
 ```
-$ cd $GOPATH/src/github.com/google/battery-historian
+cd %GOPATH%\pkg\mod\github.com\vggajam\battery-historian@v1.2.6
 
 # Compile Javascript files using the Closure compiler
-$ go run setup.go
+go run setup.go
 
 # Run Historian on your machine (make sure $PATH contains $GOBIN)
-$ go run cmd/battery-historian/battery-historian.go [--port <default:9999>]
+go run cmd/battery-historian/battery-historian.go [--port <default:9999>]
 ```
 
-Remember, you must always run battery-historian from inside the `$GOPATH/src/github.com/google/battery-historian` directory:
+Remember, you must always run battery-historian from inside the `%GOPATH%\pkg\mod\github.com\vggajam\battery-historian@v1.2.6` directory:
 
 ```
-cd $GOPATH/src/github.com/google/battery-historian
+cd %GOPATH%\pkg\mod\github.com\vggajam\battery-historian@v1.2.6
 go run cmd/battery-historian/battery-historian.go [--port <default:9999>]
 ```
 
